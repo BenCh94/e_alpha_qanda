@@ -9,6 +9,22 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+<div class="questions">
+	<h3>Questions</h3>
+	<% @questions.each do |question| %>
+      <p><%= question.title %></p>
+      <p><%= question.text %></p>
+      <p><%= link_to 'Show', question %></p>
+    <% end %>
+</div>
+<div class="answers">
+	<h3>Answers</h3>
+	<% @answers.each do |answer| %>
+      <p><%= answer.question.title %></p>
+      <p><%= answer.text %></p>
+      <p><%= link_to 'Show', answer %></p>
+    <% end %>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

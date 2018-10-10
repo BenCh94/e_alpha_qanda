@@ -11,7 +11,40 @@ We would also like for you to submit a short write up of the project and include
 You can use SQLite or another database if your choice.
 
 
-1. Create base app with rails new _app_name_
+## First iteration 
+generate a base application and add the files to repo in github
+
+- Focus on adding the three objects neccessary to the app and defining validations and relationships between them (Users, Questions, Answers)
+
+1. Create base app with rails new *app_name*
 2. Generate User scaffold
 3. Generate Question scaffold
 4. Generate Answer scaffold
+5. Edit user model to require a name and email; define rel to question/answers (has_many)
+6. Edit question model to require user, title and text; define rel to users/answers (belongs_to/has_many)
+7. Edit answer model to rerquire user, question and text; define rel to users/questions (belongs_to)
+
+## Second iteration
+add production setup to deploy base application to heroku using postgresql instead of sqlite(not supported by heroku)
+
+1. Edit Gemfile
+2. Create heroku app from command line
+3. Run bundle and push changes to heroku
+4. migrate in production
+
+## Third iteration
+add the required test to ensure objects behave and interact as they should, then add the search functionality to app
+
+1. Test that the model validations work as expected
+2. Test controller actions work as expected
+3. Write failing feature test for search functionality
+4. Create search feature that satisfies the tests
+5. Create custom error page 
+
+## Next steps (out of scope)
+1. Users should only be allowed to edit/delete their own questions and answers (add policies)
+2. Add login functionality for users
+3. Add upvoting functionality to show the most popular answer to a question
+
+
+
