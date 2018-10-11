@@ -2,6 +2,11 @@
 
 <h1>Questions</h1>
 
+<%= form_tag(questions_path, method: :get) do %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -13,15 +18,19 @@
   </thead>
 
   <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.title %></td>
-        <td><%= question.text %></td>
-        <td><%= question.user_id %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% if @questions.length > 0 %>
+      <% @questions.each do |question| %>
+        <tr>
+          <td><%= question.title %></td>
+          <td><%= question.text %></td>
+          <td><%= question.user.name %></td>
+          <td><%= link_to 'Show', question %></td>
+          <td><%= link_to 'Answer', new_answer_path(question) %></td>
+          <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <p>Sorry, no questions match your search...</p>
     <% end %>
   </tbody>
 </table>

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe UsersController do
-  let(:user) { User.create(name: 'test', email: 'test@email.ie') }
+  let(:user) { User.create(name: 'test', email: 'test@email.ie', password: 'test123', password_confirmation: 'test123') }
 
   describe "GET index" do
     it "assigns @users" do

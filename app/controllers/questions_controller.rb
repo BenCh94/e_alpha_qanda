@@ -5,6 +5,10 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     @questions = Question.all
+     if params[:search]
+      search = params[:search].downcase
+      @questions = Question.where("title LIKE ? OR text LIKE ?", "%#{search}%","%#{search}%")
+    end
   end
 
   # GET /questions/1
@@ -69,6 +73,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:title, :text, :user_id)
+      params.require(:question).permit(:title, :text, :user, :search)
     end
 end

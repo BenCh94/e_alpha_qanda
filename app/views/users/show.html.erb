@@ -12,7 +12,7 @@
 <div class="questions">
 	<h3>Questions</h3>
 	<% @questions.each do |question| %>
-      <p><%= question.title %></p>
+      <h5><%= question.title %></h5>
       <p><%= question.text %></p>
       <p><%= link_to 'Show', question %></p>
     <% end %>

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe User, :type => :model do
-  let(:user) { User.create(name: 'test', email: 'test@email.ie') }
+  let(:user) { User.create(name: 'test', email: 'test@email.ie', password: 'test123', password_confirmation: 'test123') }
 
   context "with questions" do
     it "lists all questions" do
