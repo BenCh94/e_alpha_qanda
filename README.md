@@ -47,6 +47,7 @@ add the required test to ensure objects behave and interact as they should, then
 
 ## Next steps (out of scope)
 1. Users should only be allowed to edit/delete their own questions and answers (add policies)
+2. Add factories for specs to avoid creating objects in tests
 3. Add upvoting functionality to show the most popular answer to a question
 
 
