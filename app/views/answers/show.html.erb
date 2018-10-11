@@ -7,12 +7,12 @@
 
 <p>
   <strong>Question:</strong>
-  <%= @answer.question_id %>
+  <%= @answer.question.title %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @answer.user_id %>
+  <%= @answer.user.name %>
 </p>
 
 <%= link_to 'Edit', edit_answer_path(@answer) %> |

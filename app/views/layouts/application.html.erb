@@ -12,6 +12,7 @@
   	<% if current_user %>
   	  <p><%= link_to 'Log Out', logout_path %></p>
   	<% end %>
+    <p><%= link_to 'Home', questions_path %></p>
     <%= yield %>
   </body>
 </html>
