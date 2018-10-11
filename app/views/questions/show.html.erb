@@ -17,8 +17,8 @@
 <hr>
   <% if @answers.length > 0 %>
     <% @answers.each do |answer| %>
-      <p><%= answer.text %></p>
-      <p><%= answer.user.name %></p>
+      <p>Answer: <%= answer.text %></p>
+      <p>By: <%= answer.user.name %></p>
       <p><%= link_to 'Show', answer %></p>
     <% end %>
   <% else %>
