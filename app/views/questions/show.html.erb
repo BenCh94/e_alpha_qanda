@@ -14,6 +14,16 @@
   <strong>User:</strong>
   <%= @question.user_id %>
 </p>
+<hr>
+  <% if @answers.length > 0 %>
+    <% @answers.each do |answer| %>
+      <p><%= answer.text %></p>
+      <p><%= answer.user.name %></p>
+      <p><%= link_to 'Show', answer %></p>
+    <% end %>
+  <% else %>
+    <p>Sorry, no questions match your search...</p>
+  <% end %>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
